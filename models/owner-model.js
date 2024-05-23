@@ -9,7 +9,11 @@ const ownerSchema = mongoose.Schema({
   email: "String",
   password: "String",
   picture: "String",
-  gstin:'String'
+  gstin:'String',
+  product:{
+    type:"Array",
+    default:[],
+  }
 });
 
 module.exports = mongoose.model("owner", ownerSchema);

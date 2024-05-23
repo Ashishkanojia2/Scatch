@@ -3,31 +3,30 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
-const ownersRouter = require('./routes/ownersRouters')
-const productsRouter = require('./routes/productsRouters')
-const usersRouter = require('./routes/usersRouters')
+const ownersRouter = require("./routes/ownersRouters");
+const productsRouter = require("./routes/productsRouters");
+const usersRouter = require("./routes/usersRouters");
+
+const debgr = require("debug")("development:mainFile app.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.set('view engine', 'ejs') 
+app.set("view engine", "ejs");
 
 //require mongodb
-const db = require('./config/mongoose-connection')
-
-
+const db = require("./config/mongoose-connection");
 
 //sending the request on the basic of router
-app.use ('/owners', ownersRouter)
-app.use('/products' , productsRouter)
-app.use('/users', usersRouter)
-
+app.use("/owners", ownersRouter);
+app.use("/products", productsRouter);
+app.use("/users", usersRouter);
 
 app.get("/", (req, res) => {
   res.send("working");
 });
 
 app.listen(3000, () => {
-    console.log("Server is running on port 3000");
-  });
+  debgr("Server is running on port 3000");
+});

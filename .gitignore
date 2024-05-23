@@ -1,2 +1,34 @@
 .env
 node_modules
+
+
+
+
+/*  ******************   SETUP ENVIRONMENT VAIABLE **************************
+using debug insted of console to reduce console printed in terminal
+ while applkication is running on productin phase
+
+ so when you want to print the debug in ternimal first set environment variable .
+ Debuger message will not show until you are not set environment variable.
+
+
+ for windows use comand promt   set DEBUG=development:*
+ for windows use power shell   $env:DEBUG="development:*"
+
+ for mac use : export
+
+ command is : DEBUG= yaha pr vo naame aayega jo set key hai debug paramete me firs vala
+ command is :export DEBUG=Development:*
+
+
+ OR IF YOU WANT TO REMOVE DEBUG VALUE
+  $env:DEBUG=
+
+ */
+
+ //************************************************************************************
+ setup node environment vaiable using command prompt 
+ set NODE_ENV=development
+ 
+  */
+ //************************************************************************************
